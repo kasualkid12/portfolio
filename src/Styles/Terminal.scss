@@ -1,0 +1,16 @@
+.terminal {
+  background-color: #000;
+  color: #0f0;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 20px;
+  height: calc(100vh - 40px); // Adjust based on your layout
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+p {
+  margin: 0;
+  line-height: 1.5;
+}
