@@ -16,12 +16,12 @@ function App() {
 
   return (
     <div className="app">
-    {!terminalFinished ? (
-      <Terminal onFinish={() => setTerminalFinished(true)} />
-    ) : (
-      <MainContent />
-    )}
-  </div>
+      {!terminalFinished ? (
+        <Terminal onFinish={() => setTerminalFinished(true)} />
+      ) : (
+        <MainContent />
+      )}
+    </div>
   );
 }
 
