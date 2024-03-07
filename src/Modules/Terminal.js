@@ -1,46 +1,56 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import '../Styles/Terminal.scss';
 
 const Terminal = ({ onFinish }) => {
+  // State to keep track of the current line being displayed.
   const [currentLine, setCurrentLine] = useState(0);
-  const terminalRef = useRef(null); // Reference to the terminal container
+  // useRef to hold a reference to the terminal container for scrolling purposes.
+  const terminalRef = useRef(null);
 
-  const commands = [
-    'Booting system...',
-    'Loading kernel modules...',
-    'Mounting filesystems...',
-    'Starting network manager...',
-    'Starting sshd service...',
-    'Initializing system hardware...',
-    'Setting up user environment...',
-    'Welcome to my portfolio Linux system!',
-  ];
+  // useMemo to initialize commands array only once, improving performance.
+  // This array simulates the terminal commands and their associated delays.
+  const commands = useMemo(
+    () => [
+      { text: 'Booting system...', delay: 0 },
+      { text: 'Loading kernel modules...', delay: 3000 },
+      { text: 'Mounting filesystems...', delay: 2000 },
+      { text: 'Starting network manager...', delay: 4000 },
+      { text: 'Starting sshd service...', delay: 1500 },
+      { text: 'Initializing system hardware...', delay: 2000 },
+      { text: 'Setting up user environment...', delay: 5000 },
+      { text: 'Welcome to my portfolio Linux system!', delay: 3000 },
+    ],
+    []
+  ); // Dependencies array is empty, indicating it only runs once
 
-  useEffect(() => {
-    const typeLine = () => {
-      if (currentLine < commands.length) {
+   // useEffect to handle the logic of displaying each command after its delay.
+   useEffect(() => {
+    if (currentLine < commands.length) {
+      const timeoutId = setTimeout(() => {
+        // Increment currentLine to display the next command.
         setCurrentLine(currentLine + 1);
-      } else {
-        setTimeout(onFinish, 1000); // Adjust delay as needed
-      }
-    };
+      }, commands[currentLine].delay);
 
-    const timeoutId = setTimeout(typeLine, 100); // Adjust typing speed as needed
+      // Cleanup function to clear the timeout if the component unmounts.
+      return () => clearTimeout(timeoutId);
+    } else {
+      // Once all commands are displayed, call onFinish after a short delay.
+      setTimeout(onFinish, commands[currentLine - 1]?.delay || 2000);
+    }
+  }, [currentLine, commands, onFinish]);
 
-    return () => clearTimeout(timeoutId);
-  }, [currentLine, commands.length, onFinish]);
-
+  // useEffect to scroll the terminal container to the bottom each time a new line is added.
   useEffect(() => {
-    // Scroll to the bottom of the terminal container
     if (terminalRef.current) {
       terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
     }
-  }, [currentLine]); // This effect runs every time a new line is added
+  }, [currentLine]);
 
   return (
     <div className="terminal" ref={terminalRef}>
-      {commands.slice(0, currentLine).map((line, index) => (
-        <p key={index}>{line}</p>
+      {commands.slice(0, currentLine).map((command, index) => (
+        // Display each command text up to the current line.
+        <p key={index}>{command.text}</p>
       ))}
     </div>
   );
