@@ -46,6 +46,21 @@ const Terminal = ({ onFinish }) => {
     }
   }, [currentLine]);
 
+  // New useEffect hook to listen for any key press and execute onFinish
+  useEffect(() => {
+    const handleKeyPress = () => {
+      onFinish(); // Call onFinish to transition immediately
+    };
+
+    // Add event listener when component mounts
+    document.addEventListener('keydown', handleKeyPress);
+
+    // Cleanup function to remove event listener when component unmounts
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [onFinish]); // Dependency array ensures this effect is tied to the onFinish function
+
   return (
     <div className="terminal" ref={terminalRef}>
       {commands.slice(0, currentLine).map((command, index) => (
