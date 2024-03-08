@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../Styles/ContactForm.scss';
 
 function ContactForm() {
+  const [message, setMessage] = useState('');
+
+  const handleInputChange = (event) => {
+    setMessage(event.target.value); // Update state when text changes
+  };
+
+  const characterLimit = 2000;
+
   return (
     <div className="contact-form">
       <form name="contact" method="POST" data-netlify="true">
@@ -19,7 +27,16 @@ function ContactForm() {
           </div>
           <div className="input-group">
             <label htmlFor="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
+             <textarea 
+              id="message" 
+              name="message" 
+              required 
+              maxLength={characterLimit} 
+              value={message} 
+              onChange={handleInputChange} 
+              placeholder="Describe your project (max 2000 characters)"
+            ></textarea>
+            <small>{message.length}/{characterLimit}</small>
           </div>
         </div>
         <button type="submit">Send</button>

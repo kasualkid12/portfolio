@@ -38,9 +38,19 @@
 
         textarea {
           width: calc(100% - 19px);
-          height: 100px;
+          height: 75px;
           resize: vertical;
+          min-height: 75px;
           max-height: 300px; // Adjust this as needed
+        }
+
+        small {
+          display: block; // Ensures it takes its own line
+          text-align: right; // Aligns the text to the right
+          margin-top: -15px; // Adjusts spacing between the character count and the textarea
+          margin-right: 5px; // Adjusts spacing from the right edge of the textarea
+          color: #666; // Sets a more subdued color for the character count
+          font-size: 0.8em; // Optionally reduce the font size of the counter
         }
       }
     }
