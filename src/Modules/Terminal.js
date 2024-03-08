@@ -23,8 +23,8 @@ const Terminal = ({ onFinish }) => {
     []
   ); // Dependencies array is empty, indicating it only runs once
 
-   // useEffect to handle the logic of displaying each command after its delay.
-   useEffect(() => {
+  // useEffect to handle the logic of displaying each command after its delay.
+  useEffect(() => {
     if (currentLine < commands.length) {
       const timeoutId = setTimeout(() => {
         // Increment currentLine to display the next command.

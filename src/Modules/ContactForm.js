@@ -27,16 +27,18 @@ function ContactForm() {
           </div>
           <div className="input-group">
             <label htmlFor="message">Message:</label>
-             <textarea 
-              id="message" 
-              name="message" 
-              required 
-              maxLength={characterLimit} 
-              value={message} 
-              onChange={handleInputChange} 
+            <textarea
+              id="message"
+              name="message"
+              required
+              maxLength={characterLimit}
+              value={message}
+              onChange={handleInputChange}
               placeholder="Describe your project (max 2000 characters)"
             ></textarea>
-            <small>{message.length}/{characterLimit}</small>
+            <small>
+              {message.length}/{characterLimit}
+            </small>
           </div>
         </div>
         <button type="submit">Send</button>

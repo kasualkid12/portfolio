@@ -1,0 +1,60 @@
+.home-section {
+  position: relative; // Needed to properly position the pseudo-element
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #4b5356;
+  color: white;
+
+  // Add a pseudo-element for the fading effect
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 50%; // Cover half the section, adjust if necessary
+    background: linear-gradient(to left, #333 0%, transparent 100%);
+    z-index: 1; // Ensure it overlays the text but keep in mind the image/content positioning
+  }
+
+  .text-content {
+    flex: 1;
+    text-align: center;
+    position: relative; // Make sure text appears above the gradient
+    z-index: 2; // Higher than the pseudo-element's z-index to be on top
+
+    h1, h2 {
+      margin: 0;
+      // transform: skew(10deg); // Counter-skew to straighten the text
+    }
+
+    h1 { font-size: 4rem; }
+    h2 { font-size: 2rem; }
+  }
+
+  .image-content {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    position: relative; // Ensure it's correctly layered; might adjust based on content
+    z-index: 0; // Keep the image under the gradient overlay if overlapping occurs
+  }
+}
+
+@media (max-width: 768px) {
+  .home-section {
+    flex-direction: column;
+    &::before {
+      width: 100%;
+      height: 50%; // Adjust for vertical layout
+      background: linear-gradient(to bottom, #4b5356 0%, transparent 100%);
+    }
+    .text-content, .image-content {
+      flex: none;
+      width: 100%;
+    }
+  }
+}

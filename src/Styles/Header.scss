@@ -1,4 +1,9 @@
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   display: flex;
   justify-content: space-between; // Aligns navigation to the left and icons to the right
   align-items: center;
@@ -11,7 +16,8 @@
     display: flex;
     align-items: center;
 
-    .nav-links { // Container for text links
+    .nav-links {
+      // Container for text links
       display: flex;
 
       .nav-link {
@@ -26,7 +32,8 @@
       }
     }
 
-    .icon-links { // Container for icon links
+    .icon-links {
+      // Container for icon links
       display: flex;
       align-items: center;
       margin-left: auto; // Pushes the icons to the right
