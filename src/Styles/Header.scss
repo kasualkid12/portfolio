@@ -10,6 +10,7 @@
   padding: 0 20px; // Adds padding on both sides of the header
   background-color: #333; // An example background color
   color: #fff;
+  height: 60px;
 
   .navbar {
     width: 100%;
@@ -23,6 +24,7 @@
       .nav-link {
         margin-right: 20px; // Spacing between text links
         color: #fff; // Text color
+        font-size: x-large;
         text-decoration: none;
 
         &:hover {
@@ -37,6 +39,7 @@
       display: flex;
       align-items: center;
       margin-left: auto; // Pushes the icons to the right
+      margin-right: 40px;
 
       .icon-link {
         color: white;
