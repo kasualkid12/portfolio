@@ -8,7 +8,7 @@ function Home() {
         <h1>Paul D. Walker III</h1>
         <h2>Backend Engineer</h2>
       </div>
-      <div className='image-content' style={{ backgroundImage: `url('/IMG_9833.JPG')` }} />
+      <div className='image-content' style={{ backgroundImage: `url('/IMG_9833.webp')` }} />
     </section>
   );
 }
