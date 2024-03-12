@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Terminal from './Modules/Terminal';
 import Header from './Modules/Header';
 import Home from './Modules/Home';
+import AboutMe from './Modules/AboutMe';
 import ContactForm from './Modules/ContactForm';
 import './Styles/App.scss';
 
@@ -10,6 +11,7 @@ const MainContent = () => (
     {/* Your main content goes here */}
     <Header />
     <Home />
+    <AboutMe />
     <ContactForm />
   </div>
 );
