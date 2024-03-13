@@ -1,7 +1,7 @@
 .projects-container {
   display: flex;
   flex-direction: column;
-  // align-items: center;
+  gap: 50px;
   width: 100vw; // Ensure the container takes the full viewport width
   min-height: 100vh; // Ensure the container takes minimum full viewport height
   background-size: cover; // Ensure the background covers the entire container
@@ -11,25 +11,32 @@
 
 .project {
   display: flex;
-  width: 50%;
+  width: 45%;
   max-width: 50vw; // Restricts project width to viewport width
   overflow: hidden; // Ensures content beyond the viewport width is not visible
-  background-color: rgba(249, 249, 249, 0.9); // Slightly transparent to show background
+  background-color: rgba(
+    249,
+    249,
+    249,
+    0.9
+  ); // Slightly transparent to show background
   border-radius: 10px; // Optional: adds rounded corners for stylistic effect
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-  &:nth-child(odd) {
+  &:nth-child(even) {
     flex-direction: row-reverse; // Text on the left, image on the right for odd projects
   }
 
-  &:nth-child(even) {
+  &:nth-child(odd) {
     flex-direction: row; // Image on the left, text on the right for even projects
     align-self: flex-end;
   }
 
-  .project-description, .project-image {
+  .project-description,
+  .project-image {
     flex-basis: 50%; // Each takes up to 50% of the project container
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 20px;
@@ -53,87 +60,10 @@
     flex-direction: column;
     text-align: center; // Centers text for smaller screens
 
-    .project-description, .project-image {
+    .project-description,
+    .project-image {
       flex-basis: auto; // Resets basis for stacked layout
       max-width: 80%; // Reduces width for smaller screens
     }
   }
 }
-
-// .projects-container {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   overflow-x: hidden; // Prevents horizontal scrolling caused by off-screen content
-// }
-
-// .project {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   width: 50vw;
-//   margin: 40px 0;
-//   overflow: hidden; // Ensure the content does not overflow the viewport
-//   background-color: rgba(249, 249, 249, 0.9); // Slightly transparent to show background
-//   border-radius: 10px; // Optional: adds rounded corners for stylistic effect
-//   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-//   &:nth-child(odd) {
-//     flex-direction: row-reverse;
-//   }
-
-//   .project-description,
-//   .project-image {
-//     width: 25%; // Ensures both the image and description take up half the viewport
-//     padding: 20px;
-//   }
-
-//   .project-description {
-//     text-align: center;
-//     overflow: hidden; // Keeps text within the viewport
-
-//     h3 {
-//       margin-top: 0;
-//     }
-//   }
-
-//   .project-image {
-//     display: flex;
-//     justify-content: flex-end; // Aligns the image to the right or left edge depending on the flex-direction
-//     align-items: center;
-//     position: relative; // For absolute positioning of the image inside
-
-//     img {
-//       max-width: 50vw; // Ensures the image does not extend past the middle of the page
-//       max-height: 80vh; // Optional: Constrains the image's height to a maximum, ensuring it doesn't become too tall
-//       position: absolute;
-//       right: 0; // Aligns the image to the right edge of its container; for nth-child(odd), it's overridden
-//     }
-//   }
-
-//   &:nth-child(odd) .project-image img {
-//     right: auto; // Resets the right alignment for odd items
-//     left: 0; // Aligns the image to the left edge of its container
-//   }
-// }
-
-// @media (max-width: 768px) {
-//   .project {
-//     flex-direction: column !important;
-
-//     .project-description,
-//     .project-image {
-//       width: 100%; // Takes full width on smaller screens
-//     }
-
-//     .project-image {
-//       justify-content: center; // Centers the image when stacked
-
-//       img {
-//         max-width: 90%; // Allows some padding around the image
-//         max-height: none; // Resets the height constraint
-//         position: static; // Removes absolute positioning for stacked layout
-//       }
-//     }
-//   }
-// }

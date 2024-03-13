@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import Aos from 'aos';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import '../Styles/Header.scss'; // Adjust the path as needed
 
 const Header = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1200 });
+  }, []);
+
   return (
-    <header className="header">
+    <header className="header" data-aos="fade-down">
       <nav className="navbar">
         <div className="nav-links">
           <a href="#home" className="nav-link">

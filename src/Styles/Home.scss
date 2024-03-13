@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #4b5356;
+  background-color: #333;
   color: white;
 
   // Add a pseudo-element for the fading effect
@@ -16,7 +16,7 @@
     top: 0;
     bottom: 0;
     width: 50%; // Cover half the section, adjust if necessary
-    background: linear-gradient(to left, #333 0%, transparent 100%);
+    // background: linear-gradient(to left, #333 0%, transparent 100%);
     z-index: 1; // Ensure it overlays the text but keep in mind the image/content positioning
   }
 

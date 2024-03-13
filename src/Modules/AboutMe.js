@@ -10,6 +10,7 @@ const AboutMe = () => {
 
   return (
     <section id="about" className="about-me-container" style={{backgroundImage: `url(/slanted-gradient.svg)`}}>
+      <h2 className='title'>Get to know me</h2>
       <div className="about-me-section left" data-aos="fade-right">
         <p>
           Hello! My name is Paul Walker, though you can call me Trey. I'm deeply

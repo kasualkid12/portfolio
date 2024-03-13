@@ -12,6 +12,7 @@ function ContactForm() {
 
   return (
       <section id='contact' className="contact-form">
+        <h2 className='title'>Contact me here</h2>
         <form name="contact" method="POST" data-netlify="true">
           <input type="hidden" name="form-name" value="contact" />
           <div className="form-inputs">
@@ -34,7 +35,7 @@ function ContactForm() {
                 maxLength={characterLimit}
                 value={message}
                 onChange={handleInputChange}
-                placeholder="Describe your project (max 2000 characters)"
+                placeholder="Write me a brief message!"
               ></textarea>
               <small>
                 {message.length}/{characterLimit}
