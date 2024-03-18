@@ -7,12 +7,12 @@ import 'aos/dist/aos.css'; // Ensure AOS is imported
 const projects = [
   {
     id: 1,
-    title: 'Project One',
+    title: 'Kubby Buddy',
     description:
-      'Brief description of Project One. Highlighting key features and technologies used.',
-    imageUrl: '/stock-image.jpg',
+      'Kubby Buddy is your container management pal, allowing you to view, start, stop, and delete your containers. I built out the CI/CD of the app utilizing Husky and CircleCI, while using Jest to build out the tests.',
+    imageUrl: '/Kubby-Buddy.webp',
     direction: 'fade-right',
-    projectUrl: '',
+    projectUrl: 'https://www.kubbybuddy.com',
   },
   {
     id: 2,
@@ -39,11 +39,6 @@ const Projects = () => {
     Aos.init({ duration: 1200 });
   }, []);
 
-  const handleProjectClick = (url) => {
-    // Simple redirect to project URL
-    window.location.href = url;
-  };
-
   return (
     <section
       id="projects"
@@ -52,11 +47,14 @@ const Projects = () => {
     >
       <h2 className="title">Check Out My Work</h2>
       {projects.map((project) => (
-        <div
+        <a
+          href={project.projectUrl ? project.projectUrl : undefined}
           key={project.id}
           className="project"
           data-aos={project.direction}
-          onClick={() => handleProjectClick(project.projectUrl)}
+          target="_blank" // Opens in a new tab
+          rel="noopener noreferrer" // Security measure for opening links in a new tab
+          style={{ textDecoration: 'none', color: 'inherit' }} // Removes default link styling
         >
           <img
             src={project.imageUrl}
@@ -67,7 +65,7 @@ const Projects = () => {
             <h3>{project.title}</h3>
             <p>{project.description}</p>
           </div>
-        </div>
+        </a>
       ))}
     </section>
   );

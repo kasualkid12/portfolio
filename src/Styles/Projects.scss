@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: 50px;
   width: 100vw; // Ensure the container takes the full viewport width
+  max-width: 100vw;
   min-height: 100vh; // Ensure the container takes minimum full viewport height
   background-size: cover; // Ensure the background covers the entire container
   background-position: center; // Center the background image
@@ -44,6 +45,7 @@
 
   .project-description {
     z-index: 2; // Ensures text is above the image if they overlap
+    text-align: center;
   }
 
   .project-image {

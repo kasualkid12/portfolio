@@ -22,7 +22,12 @@
     max-width: 38%; // Adjust based on your design needs
     line-height: 1.6; // Improves readability
     padding: 20px; // Add padding for better spacing and readability
-    background-color: rgba(249, 249, 249, 0.9); // Slightly transparent to show background
+    background-color: rgba(
+      249,
+      249,
+      249,
+      0.9
+    ); // Slightly transparent to show background
     border-radius: 10px; // Optional: adds rounded corners for stylistic effect
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Optional: adds a subtle shadow for depth
     position: relative; // Needed for z-index to work correctly
