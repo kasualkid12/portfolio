@@ -81,7 +81,7 @@
     flex-direction: column; // Stacks image and description vertically
     align-items: center; // Ensures content alignment is centered within each project
     justify-content: center;
-
+    
     .project-description,
     .project-image {
       padding: 10px;
@@ -89,19 +89,20 @@
       width: auto; // Ensures that the content fills the full width of the project box
       justify-content: center; // Center align the text content horizontally
     }
-
+    
     .project-image {
       order: 0; // Image appears above the text
       padding-top: 20px;
     }
-
+    
     .project-description {
       order: 1;
       padding-bottom: 20px;
     }
-
+    
     &:nth-child(n) {
       flex-direction: column;
+      border-radius: 10px;
     }
   }
 }
