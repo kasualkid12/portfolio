@@ -42,31 +42,33 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="projects-container"
+      className="projects"
       style={{ backgroundImage: `url(/slanted-gradient-reversed.svg)` }}
     >
       <h2 className="title">Check Out My Work</h2>
-      {projects.map((project) => (
-        <a
-          href={project.projectUrl ? project.projectUrl : undefined}
-          key={project.id}
-          className="project"
-          data-aos={project.direction}
-          target="_blank" // Opens in a new tab
-          rel="noopener noreferrer" // Security measure for opening links in a new tab
-          style={{ textDecoration: 'none', color: 'inherit' }} // Removes default link styling
-        >
-          <img
-            src={project.imageUrl}
-            alt={project.title}
-            className="project-image"
-          />
-          <div className="project-description">
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-          </div>
-        </a>
-      ))}
+      <div className="projects-container">
+        {projects.map((project) => (
+          <a
+            href={project.projectUrl ? project.projectUrl : undefined}
+            key={project.id}
+            className="project"
+            data-aos={project.direction}
+            target="_blank" // Opens in a new tab
+            rel="noopener noreferrer" // Security measure for opening links in a new tab
+            style={{ textDecoration: 'none', color: 'inherit' }} // Removes default link styling
+          >
+            <img
+              src={project.imageUrl}
+              alt={project.title}
+              className="project-image"
+            />
+            <div className="project-description">
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+            </div>
+          </a>
+        ))}
+      </div>
     </section>
   );
 };

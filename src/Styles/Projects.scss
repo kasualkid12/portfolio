@@ -1,13 +1,19 @@
-.projects-container {
+.projects {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  // gap: 50px;
   // width: 100vw; // Ensure the container takes the full viewport width
   max-width: 100vw;
   min-height: 100vh; // Ensure the container takes minimum full viewport height
   background-size: cover; // Ensure the background covers the entire container
   background-position: center; // Center the background image
   background-repeat: no-repeat; // Prevent the background image from repeating
+}
+
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
 .project {
@@ -21,15 +27,17 @@
     249,
     0.9
   ); // Slightly transparent to show background
-  border-radius: 10px; // Optional: adds rounded corners for stylistic effect
+  // border-radius: 10px; // Optional: adds rounded corners for stylistic effect
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-  &:nth-child(even) {
-    flex-direction: row-reverse; // Text on the left, image on the right for odd projects
-  }
-
+  
   &:nth-child(odd) {
-    flex-direction: row; // Image on the left, text on the right for even projects
+    flex-direction: row-reverse;
+    border-radius: 0 10px 10px 0;
+  }
+  
+  &:nth-child(even) {
+    flex-direction: row;
+    border-radius: 10px 0 0 10px;
     align-self: flex-end;
   }
 
