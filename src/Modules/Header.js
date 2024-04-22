@@ -9,20 +9,31 @@ const Header = () => {
     Aos.init({ duration: 1200 });
   }, []);
 
+  const handleScroll = (e) => {
+    e.preventDefault(); // Prevent default anchor click behavior
+    const href = e.currentTarget.getAttribute('href'); // Get the href attribute of the clicked element
+    const offsetTop = document.querySelector(href).offsetTop; // Get the top offset of the target element
+
+    window.scrollTo({
+      top: offsetTop - 60, // Subtract header height to ensure target is not covered by the header
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <header className="header" data-aos="fade-down">
       <nav className="navbar">
         <div className="nav-links">
-          <a href="#home" className="nav-link">
+          <a href="#home" className="nav-link" onClick={handleScroll}>
             Home
           </a>
-          <a href="#about" className="nav-link">
+          <a href="#about" className="nav-link" onClick={handleScroll}>
             About Me
           </a>
-          <a href="#projects" className="nav-link">
+          <a href="#projects" className="nav-link" onClick={handleScroll}>
             Projects
           </a>
-          <a href="#contact" className="nav-link">
+          <a href="#contact" className="nav-link" onClick={handleScroll}>
             Contact Me
           </a>
         </div>
