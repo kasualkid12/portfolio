@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
-  width: 100vw; // Ensure the container takes the full viewport width
+  // width: 100vw; // Ensure the container takes the full viewport width
   max-width: 100vw;
   min-height: 100vh; // Ensure the container takes minimum full viewport height
   background-size: cover; // Ensure the background covers the entire container
@@ -58,14 +58,39 @@
 }
 
 @media (max-width: 768px) {
+  .projects-container {
+    align-items: center; // Center align all projects within the container
+    max-width: 100%;
+  }
+
   .project {
-    flex-direction: column;
-    text-align: center; // Centers text for smaller screens
+    width: 80%; // Use more of the screen's width to display projects
+    max-width: 80%; // Consistency with width setting
+    margin: 10px auto; // Centers the project in the container
+    flex-direction: column; // Stacks image and description vertically
+    align-items: center; // Ensures content alignment is centered within each project
+    justify-content: center;
 
     .project-description,
     .project-image {
-      flex-basis: auto; // Resets basis for stacked layout
-      max-width: 80%; // Reduces width for smaller screens
+      padding: 10px;
+      max-width: 100%; // Allows each component to fill the available space
+      width: auto; // Ensures that the content fills the full width of the project box
+      justify-content: center; // Center align the text content horizontally
+    }
+
+    .project-image {
+      order: 0; // Image appears above the text
+      padding-top: 20px;
+    }
+
+    .project-description {
+      order: 1;
+      padding-bottom: 20px;
+    }
+
+    &:nth-child(n) {
+      flex-direction: column;
     }
   }
 }

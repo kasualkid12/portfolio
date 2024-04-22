@@ -12,13 +12,13 @@ const Terminal = ({ onFinish }) => {
   const commands = useMemo(
     () => [
       { text: 'Booting system...', delay: 0 },
-      { text: 'Loading kernel modules...', delay: 3000 },
-      { text: 'Mounting filesystems...', delay: 2000 },
-      { text: 'Starting network manager...', delay: 4000 },
-      { text: 'Starting sshd service...', delay: 1500 },
-      { text: 'Initializing system hardware...', delay: 2000 },
-      { text: 'Setting up user environment...', delay: 5000 },
-      { text: 'Welcome to my portfolio Linux system!', delay: 3000 },
+      { text: 'Loading kernel modules...', delay: 1000 },
+      { text: 'Mounting filesystems...', delay: 750 },
+      { text: 'Starting network manager...', delay: 1250 },
+      { text: 'Starting sshd service...', delay: 800 },
+      { text: 'Initializing system hardware...', delay: 800 },
+      { text: 'Setting up user environment...', delay: 1500 },
+      { text: 'Welcome to my portfolio Linux system!', delay: 1000 },
     ],
     []
   ); // Dependencies array is empty, indicating it only runs once
