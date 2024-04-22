@@ -1,6 +1,18 @@
+.form-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// .title {
+//   justify-self: center;
+//   align-self: center;
+// }
+
 .contact-form {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 25vh;
+  padding-bottom: 35vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
