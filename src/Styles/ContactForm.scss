@@ -3,6 +3,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
 // .title {
@@ -11,8 +13,6 @@
 // }
 
 .contact-form {
-  padding-top: 25vh;
-  padding-bottom: 35vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
