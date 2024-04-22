@@ -1,5 +1,6 @@
 .about-me-container {
-  padding: 60px;
+  padding-top: 60px;
+  padding-bottom: 60px;
   display: flex;
   flex-direction: column;
   align-items: center; // Ensures all content is aligned to the center
@@ -9,6 +10,7 @@
   background-size: cover; // Ensure the background covers the entire container
   background-position: center; // Center the background image
   background-repeat: no-repeat; // Prevent the background image from repeating
+  text-align: center;
 }
 
 .about-me-section {
@@ -53,6 +55,16 @@
     width: 100%; // Use full width to allow more space for content
     max-width: 100%;
     margin: 20px 0; // Adjust vertical spacing
+
+    &.left p {
+      text-align: center;
+      margin: 0 auto 0 10rem; // Adjust based on your design
+    }
+
+    &.right p {
+      text-align: center;
+      margin: 0 10rem 0 auto; // Adjust based on your design
+    }
   }
 
   .about-me-section p {
@@ -66,4 +78,5 @@
     margin-left: auto;  // Center alignment for left/right specific paragraphs
     margin-right: auto; // Center alignment for left/right specific paragraphs
   }
+
 }

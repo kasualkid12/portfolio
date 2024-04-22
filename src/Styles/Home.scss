@@ -1,4 +1,5 @@
 .home-section {
+  overflow: hidden;
   padding-top: 60px;
   position: relative; // Needed to properly position the pseudo-element
   display: flex;
@@ -63,7 +64,7 @@
     }
     .text-content {
       // background: rgba(0, 0, 0, 0.1); // Optional: Add background to enhance text readability
-      padding: 120%; // Add padding to text for better readability
+      padding-top: 120%; // Add padding to text for better readability
     }
     .image-content {
       z-index: 1; // Ensure the image is below the text
