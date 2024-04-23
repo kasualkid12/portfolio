@@ -64,6 +64,20 @@
       margin-left: auto; // Pushes the icons to the right
       margin-right: 40px;
 
+      .blog-link {
+        color: #fff;
+        text-align: center;
+        font-size: x-large;
+        padding: 10px 5px;
+        text-decoration: none;
+        user-select: none;
+
+        &:hover {
+          text-decoration: underline;
+          color: #00bfff;
+        }
+      }
+
       .icon-link {
         color: white;
         display: flex;

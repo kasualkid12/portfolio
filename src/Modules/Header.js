@@ -65,11 +65,11 @@ const Header = () => {
           <a href="#contact" className="nav-link" onClick={handleScroll}>
             Contact Me
           </a>
-          {/* <a href="https://www.blog.kasu-it.dev/" className="nav-link" onClick={handleScroll}>
-            Blog
-          </a> */}
         </div>
         <div className="icon-links">
+          {/* <a href="https://www.blog.kasu-it.dev/" className="blog-link" target="_blank" rel="noopener noreferrer">
+            Blog
+          </a> */}
           <a
             href="https://www.linkedin.com/in/pauldwalkeriii/"
             className="icon-link"
