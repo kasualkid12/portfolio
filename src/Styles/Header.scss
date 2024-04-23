@@ -49,6 +49,7 @@
         font-size: x-large;
         padding: 10px 20px;
         text-decoration: none;
+        user-select: none;
 
         &:hover {
           text-decoration: underline;
