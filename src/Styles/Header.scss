@@ -91,6 +91,9 @@
         position: static;
         align-items: center;
         background: transparent;
+        overflow: visible;
+        max-height: none; // Override max-height
+        opacity: 1; // Ensure full visibility
 
         .nav-link {
           margin-right: 20px;

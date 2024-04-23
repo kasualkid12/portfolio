@@ -45,11 +45,9 @@ const Header = () => {
   return (
     <header className="header" data-aos="fade-down">
       <nav className="navbar">
-        {/* {windowWidth < 1080 && ( */}
-          <button className="navbar-toggler" onClick={handleNavCollapse}>
-            <FontAwesomeIcon icon={faBars} />
-          </button>
-        {/* )} */}
+        <button className="navbar-toggler" onClick={handleNavCollapse}>
+          <FontAwesomeIcon icon={faBars} />
+        </button>
         <div
           className={`nav-links ${
             isNavCollapsed && windowWidth < 1080 ? 'collapse' : ''
