@@ -56,6 +56,22 @@
           color: #00bfff;
         }
       }
+
+      .resume-button {
+        color: #fff;
+        text-align: center;
+        font-size: x-large;
+        padding: 10px 20px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        user-select: none;
+  
+        &:hover {
+          text-decoration: underline;
+          color: #00bfff;
+        }
+      }
     }
 
     .icon-links {
@@ -63,6 +79,7 @@
       align-items: center;
       margin-left: auto; // Pushes the icons to the right
       margin-right: 40px;
+
 
       .blog-link {
         color: #fff;

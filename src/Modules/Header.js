@@ -6,11 +6,13 @@ import {
   faLinkedin as faLinkedinBrands,
   faGithub as faGithubBrands,
 } from '@fortawesome/free-brands-svg-icons';
+import ResumePreview from './ResumePreview';
 import '../Styles/Header.scss';
 
 const Header = () => {
   const [isNavCollapsed, setIsNavCollapsed] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
@@ -42,6 +44,14 @@ const Header = () => {
     }
   };
 
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <header className="header" data-aos="fade-down">
       <nav className="navbar">
@@ -65,6 +75,9 @@ const Header = () => {
           <a href="#contact" className="nav-link" onClick={handleScroll}>
             Contact Me
           </a>
+          <button className="resume-button" onClick={openModal}>
+            Résumé
+          </button>
         </div>
         <div className="icon-links">
           {/* <a href="https://www.blog.kasu-it.dev/" className="blog-link" target="_blank" rel="noopener noreferrer">
@@ -88,6 +101,7 @@ const Header = () => {
           </a>
         </div>
       </nav>
+      {isModalOpen && <ResumePreview closeModal={closeModal} />}
     </header>
   );
 };
