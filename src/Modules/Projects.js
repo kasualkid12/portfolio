@@ -9,28 +9,26 @@ const projects = [
     id: 1,
     title: 'Kubby Buddy',
     description:
-      'Kubby Buddy is your container management pal, allowing you to view, start, stop, and delete your containers. I built out the CI/CD of the app utilizing Husky and CircleCI, while using Jest to build out the tests.',
+      'Kubby Buddy is your container management pal, allowing you to view, start, stop, and delete your containers. I developed the CI/CD pipeline with Husky and CircleCI and implemented testing with Jest',
     imageUrl: '/Kubby-Buddy.webp',
-    direction: 'fade-right',
     projectUrl: 'https://www.kubbybuddy.com',
   },
-  {
-    id: 2,
-    title: 'Project Two',
-    description:
-      'Overview of Project Two, showcasing the challenges faced and solutions provided.',
-    imageUrl: '/stock-image.jpg',
-    direction: 'fade-left',
-    projectUrl: '',
-  },
+  // {
+  //   id: 2,
+  //   title: 'Project Three',
+  //   description:
+  //     'Summary of Project Three, focusing on its impact and the skills honed during development.',
+  //   imageUrl: '/stock-image.jpg',
+  //   projectUrl: '',
+  // },
   {
     id: 3,
-    title: 'Project Three',
+    title: 'Study With Me',
     description:
-      'Summary of Project Three, focusing on its impact and the skills honed during development.',
-    imageUrl: '/stock-image.jpg',
-    direction: 'fade-right',
-    projectUrl: '',
+      'Study with Me is a project designed to provide users with a personalized study dashboard. I focused extensively on developing the backend and database using Express.js and MongoDB, ensuring robust user customization',
+    imageUrl:
+      'https://raw.githubusercontent.com/PFA-Crew/Study-With-Me/dev/assets/Dec-06-2023%2011-13-25.gif',
+    projectUrl: 'https://github.com/PFA-Crew/Study-With-Me',
   },
 ];
 
@@ -47,12 +45,12 @@ const Projects = () => {
     >
       <h2 className="title">Check Out My Work</h2>
       <div className="projects-container">
-        {projects.map((project) => (
+        {projects.map((project, i) => (
           <a
             href={project.projectUrl ? project.projectUrl : undefined}
             key={project.id}
             className="project"
-            data-aos={project.direction}
+            data-aos={i % 2 === 0 ? 'fade-right' : 'fade-left'}
             target="_blank" // Opens in a new tab
             rel="noopener noreferrer" // Security measure for opening links in a new tab
             style={{ textDecoration: 'none', color: 'inherit' }} // Removes default link styling
