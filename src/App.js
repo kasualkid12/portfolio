@@ -4,6 +4,7 @@ import Header from './Modules/Header';
 import Home from './Modules/Home';
 import AboutMe from './Modules/AboutMe';
 import Projects from './Modules/Projects';
+import Testimonials from './Modules/Testamonials';
 import ContactForm from './Modules/ContactForm';
 import './Styles/App.scss';
 
@@ -14,6 +15,7 @@ const MainContent = () => (
     <Home />
     <AboutMe />
     <Projects />
+    <Testimonials />
     <ContactForm />
   </div>
 );
