@@ -1,6 +1,9 @@
 /* eslint-disable no-restricted-globals */
 import { getAssetFromKV } from '@cloudflare/kv-asset-handler';
 
+const dotenv = require('dotenv');
+dotenv.config();
+
 addEventListener('fetch', (event) => {
   event.respondWith(handleRequest(event));
 });
@@ -38,7 +41,7 @@ async function handleRequest(event) {
 
 async function sendEmail(data) {
   const emailAPIUrl = 'https://api.example.com/send-email'; // Replace with actual API endpoint
-  const emailAPIKey = 'YOUR_API_KEY'; // Replace with your email API key
+  const emailAPIKey = 'process.env.EMAIL_API_KEY'; // Replace with your email API key
 
   const emailResponse = await fetch(emailAPIUrl, {
     method: 'POST',
@@ -47,7 +50,7 @@ async function sendEmail(data) {
       Authorization: `Bearer ${emailAPIKey}`,
     },
     body: JSON.stringify({
-      to: 'your-email@example.com', // The email address to send the form data to
+      to: process.env.EMAIL, // The email address to send the form data to
       subject: `New message from ${data.name}`,
       text: `Email: ${data.email}\n\nMessage: ${data.message}`,
     }),
